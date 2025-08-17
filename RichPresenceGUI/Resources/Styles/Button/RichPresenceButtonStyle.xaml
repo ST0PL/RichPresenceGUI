@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib">
+    <Style x:Key="RichPresenceButtonStyle" TargetType="{x:Type clib:Button}" BasedOn="{StaticResource ClassicButtonStyle}">
+        <Setter Property="Background" Value="{DynamicResource VisualTemplateButtonBackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource BaseTextColor}"/>
+        <Setter Property="HoverBackgroundColor" Value="{DynamicResource HoverVisualTemplateButtonBackground}"/>
+        <Setter Property="ClickBackgroundColor" Value="{DynamicResource ClickVisualTemplateButtonBackground}"/>
+        <Setter Property="BorderThickness" Value="0.3"/>
+    </Style>
+</ResourceDictionary>

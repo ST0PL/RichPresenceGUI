@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib">
+    <Style x:Key="ScrollViewerStyle" TargetType="{x:Type clib:ScrollViewer}" BasedOn="{StaticResource {x:Type clib:ScrollViewer}}">
+        <Setter Property="ScrollBarThumbWidth" Value="5"/>
+        <Setter Property="ScrollBarCornerRadius" Value="3"/>
+        <Setter Property="ScrollBarThumbCornerRadius" Value="3"/>
+    </Style>
+</ResourceDictionary>

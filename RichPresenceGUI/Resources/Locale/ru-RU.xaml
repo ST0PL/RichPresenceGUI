@@ -1,0 +1,117 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="locale_name">Русский</sys:String>
+
+    <!--Navigation bar-->
+    
+    <sys:String x:Key="nav_fields">Главная</sys:String>
+    <sys:String x:Key="nav_templates">Шаблоны</sys:String>
+    <sys:String x:Key="nav_debug">Отладка</sys:String>
+    
+    <!--Fields view-->
+
+    <sys:String x:Key="fields_appId">Application ID</sys:String>
+
+    <sys:String x:Key="fields_general_components">Основная информация</sys:String>
+    <sys:String x:Key="fields_details">Детали</sys:String>
+    <sys:String x:Key="fields_state">Состояние</sys:String>
+
+    <sys:String x:Key="fields_large_image">Большое изображение</sys:String>
+    <sys:String x:Key="fields_small_image">Малое изображение</sys:String>
+    
+    <sys:String x:Key="fields_image_key">Ключ</sys:String>
+    <sys:String x:Key="fields_image_text">Текст</sys:String>
+
+
+    <sys:String x:Key="fields_party">Пати</sys:String>
+    <sys:String x:Key="fields_size">Количество участников</sys:String>
+    <sys:String x:Key="fields_max">Максимум</sys:String>
+
+    <sys:String x:Key="fields_timestamps">Timestamps (миллисекунды)</sys:String>
+    <sys:String x:Key="fields_start">Начало</sys:String>
+    <sys:String x:Key="fields_now_offset">Отступ от текущей даты</sys:String>
+    <sys:String x:Key="fields_end">Конец</sys:String>
+    <sys:String x:Key="fields_start_offset">Отступ от начала</sys:String>
+
+    <sys:String x:Key="fields_buttons">Кнопки</sys:String>
+    <sys:String x:Key="fields_addButton">Добавить</sys:String>
+    <sys:String x:Key="fields_removeButton">Удалить</sys:String>
+    <sys:String x:Key="fields_button">Кнопка</sys:String>
+    <sys:String x:Key="fields_button_label">Текст</sys:String>
+    <sys:String x:Key="fields_button_url">URL</sys:String>
+
+    <sys:String x:Key="fields_activityType">Тип активности</sys:String>
+    <sys:String x:Key="fields_statusDisplayType">Тип отображения статуса</sys:String>
+
+    <sys:String x:Key="fields_disconnect">Отключиться</sys:String>
+    <sys:String x:Key="fields_connect">Подключиться</sys:String>
+
+    <sys:String x:Key="fields_saveTemplate">Сохранить шаблон</sys:String>
+    <sys:String x:Key="fields_updatePresence">Обновить статус</sys:String>
+
+    <!--Templates view-->
+    <sys:String x:Key="templates_noItems">Шаблоны не найдены</sys:String>
+    <sys:String x:Key="templates_applicationName">Название приложения</sys:String>
+    <sys:String x:Key="templates_partyOf">из</sys:String>
+    <sys:String x:Key="templates_select">Выбрать</sys:String>
+    <sys:String x:Key="templates_remove">Удалить</sys:String>
+    
+    <sys:String x:Key="templates_select_path">Выбрать папку</sys:String>
+    <sys:String x:Key="templates_refresh">Обновить</sys:String>
+
+    <!--Debug view-->
+
+    <sys:String x:Key="debug_clear">Очистить</sys:String>
+    <sys:String x:Key="debug_save">Сохранить в файл</sys:String>
+
+    <!--Balloon view-->
+    <sys:String x:Key="balloon_minimized">Приложение было свернуто в область уведомлений. Вы можете открыть его двойным кликом по иконке в области уведомлений или нажав ПКМ по иконке и выбрав пункт "Показать окно".</sys:String>
+    <sys:String x:Key="balloon_dontshowagain">Больше не показывать</sys:String>
+    
+    <!--MainWindow-->
+
+    <sys:String x:Key="mw_updateAvailable">Доступна новая версия</sys:String>
+    <sys:String x:Key="mw_repositoryTooltip">Репозиторий на GitHub</sys:String>
+
+    <!--SaveTemplateWindow-->
+
+    <sys:String x:Key="stw_title">Сохранить шаблон</sys:String>
+    <sys:String x:Key="stw_saveButton">Сохранить</sys:String>
+    <sys:String x:Key="stw_templateName">Название шаблона</sys:String>
+
+    <!--NotificationWindow-->
+
+    <sys:String x:Key="nw_template_saved">Шаблон "{0}" успешно сохранен.</sys:String>
+    <sys:String x:Key="nw_template_selected">Шаблон "{0}" успешно установлен.</sys:String>
+    <sys:String x:Key="nw_template_folderChanged">Папка с шаблонами успешно изменена на "{0}"</sys:String>
+    <sys:String x:Key="nw_rpUpdated">Статус успешно обновлен.</sys:String>
+    <sys:String x:Key="nw_logsSaved">Логи успешно сохранены в "{0}"</sys:String>
+
+    <sys:String x:Key="nw_type_information">Уведомление</sys:String>
+    <sys:String x:Key="nw_type_error">Произошла ошибка</sys:String>
+    <sys:String x:Key="nw_type_exception">Возникло исключение</sys:String>
+
+    <!--UnhandledExceptionWindows-->
+
+    <sys:String x:Key="uew_close">Закрыть</sys:String>
+
+    <!--Task bar-->
+
+    <sys:String x:Key="tb_show">Показать окно</sys:String>
+    <sys:String x:Key="tb_hide">Скрыть окно</sys:String>
+    <sys:String x:Key="tb_quit">Выйти</sys:String>
+
+    <!--Common-->
+
+    <sys:String x:Key="activity_type_playing">Играет в</sys:String>
+    <sys:String x:Key="activity_type_listening">Слушает</sys:String>
+    <sys:String x:Key="activity_type_watching">Смотрит</sys:String>
+    <sys:String x:Key="activity_type_competing">Соревнуется в</sys:String>
+
+    <sys:String x:Key="statusDisplay_type_name">Название</sys:String>
+    <sys:String x:Key="statusDisplay_type_state">Состояние</sys:String>
+    <sys:String x:Key="statusDisplay_type_details">Детали</sys:String>
+
+</ResourceDictionary>

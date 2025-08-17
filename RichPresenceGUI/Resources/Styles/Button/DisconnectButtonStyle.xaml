@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib">
+    <Style x:Key="DisconnectButtonStyle" TargetType="{x:Type clib:Button}" BasedOn="{StaticResource ClassicButtonStyle}">
+        <Setter Property="Foreground" Value="{DynamicResource DisconnectButtonTitleColor}"/>
+        <Setter Property="Background" Value="{DynamicResource DisconnectButtonBackground}"/>
+        <Setter Property="HoverBackgroundColor" Value="{DynamicResource HoverDisconnectButtonBackground}"/>
+        <Setter Property="ClickBackgroundColor" Value="{DynamicResource ClickDisconnectButtonBackground}"/>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DataTemplate x:Key="logger_trace_template">
+        <TextBlock Text="{Binding Message}"
+                   HorizontalAlignment="Left"
+                   Padding="10"
+                   TextWrapping="Wrap"
+                   Foreground="{DynamicResource logTraceColor}"
+                   FontWeight="SemiBold"
+                   Opacity="0.7"/>
+    </DataTemplate>
+    <DataTemplate x:Key="logger_info_template">
+        <TextBlock Text="{Binding Message}"
+                   HorizontalAlignment="Left"
+                   Padding="10"
+                   TextWrapping="Wrap"
+                   Foreground="{DynamicResource logInfoColor}"
+                   FontWeight="SemiBold"
+                   Opacity="0.7"/>
+    </DataTemplate>
+    <DataTemplate x:Key="logger_warning_template">
+        <TextBlock Text="{Binding Message}"
+                   HorizontalAlignment="Left"
+                   Padding="10"
+                   TextWrapping="Wrap"
+                   Foreground="{DynamicResource logWarnColor}"
+                   FontWeight="SemiBold"
+                   Opacity="0.7"/>
+    </DataTemplate>
+    <DataTemplate x:Key="logger_error_template">
+        <TextBlock Text="{Binding Message}"
+                   HorizontalAlignment="Left"
+                   Padding="10"
+                   TextWrapping="Wrap"
+                   Foreground="{DynamicResource logErrorColor}"
+                   FontWeight="SemiBold"
+                   Opacity="0.7"/>
+    </DataTemplate>
+</ResourceDictionary>

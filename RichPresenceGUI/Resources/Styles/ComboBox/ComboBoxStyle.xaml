@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib"
+                    xmlns:prop="clr-namespace:ControlsLib.AttachedProperties;assembly=ControlsLib">
+    <Style x:Key="ComboBoxStyle" TargetType="{x:Type clib:ComboBox}" BasedOn="{StaticResource {x:Type clib:ComboBox}}">
+        <Setter Property="prop:ScrollViewerHelper.ScrollBarThumbWidth" Value="5"/>
+        <Setter Property="prop:ScrollViewerHelper.ScrollBarCornerRadius" Value="3"/>
+        <Setter Property="prop:ScrollViewerHelper.ScrollBarThumbCornerRadius" Value="3"/>
+        <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
+        <Setter Property="HoverBackgroundColor" Value="{DynamicResource HoverInputBackground}"/>
+        <Setter Property="PopupBackground" Value="{DynamicResource ComboBoxPopupBackground}"/>
+        <Setter Property="SelectedItemBackground" Value="{DynamicResource SelectedComboBoxItemBackground}"/>
+        <Setter Property="HoverItemBackground" Value="{DynamicResource HoverComboBoxItemBackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource BaseTextColor}"/>
+        <Setter Property="ItemsForeground" Value="{DynamicResource ComboBoxItemColor}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="PopupEffect">
+            <Setter.Value>
+                <DropShadowEffect Color="Black"
+                                  Opacity="0.2"
+                                  Direction="0"
+                                  ShadowDepth="0"
+                                  BlurRadius="10"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

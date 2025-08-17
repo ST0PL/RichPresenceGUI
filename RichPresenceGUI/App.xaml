@@ -1,0 +1,67 @@
+﻿<Application x:Class="RichPresenceGUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:RichPresenceGUI"
+             xmlns:converters="clr-namespace:RichPresenceGUI.Converters"
+             xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib"
+             xmlns:clibConv="clr-namespace:ControlsLib.Converters;assembly=ControlsLib">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <converters:IncreaseIntConverter x:Key="increaseConverter"/>
+                    <converters:TimeSpanConverter x:Key="timeSpanConverter"/>
+                    <converters:EnumLocaleConverter x:Key="enumLocaleConverter"/>
+                    <clibConv:IsStringEmptyConverter x:Key="isStringEmptyConverter"/>
+                    <clibConv:InverseBoolConverter x:Key="inverseBoolConverter"/>
+                    <clibConv:NullOrEmptyVisibilityConverter x:Key="nullOrEmptyVisibilityConverter"/>
+                    <clibConv:InverseNullOrEmptyVisibilityConverter x:Key="inverseNullOrEmptyVisibilityConverter"/>
+                    <clibConv:MultiTimeBarContextConverter x:Key="multiTimeBarContextConverter"/>
+                </ResourceDictionary>
+
+                <ResourceDictionary Source="/ControlsLib;component/Styles/Generic.xaml"/>
+                <ResourceDictionary Source="/Resources/Themes/Dark.xaml"/>
+                <ResourceDictionary Source="/Resources/Locale/en-US.xaml"/>
+
+
+                <ResourceDictionary Source="/Resources/Styles/Colors.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/DrawingImages.xaml"/>
+
+                <ResourceDictionary Source="/Resources/Styles/Tooltip/TooltipStyle.xaml"/>
+
+                <ResourceDictionary Source="/Resources/Styles/TextBlock/TextBlockStyle.xaml"/>
+
+                <ResourceDictionary Source="/Resources/Styles/TextBox/TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/TextBox/Fields_BlockTextBoxStyle.xaml"/>
+
+                <ResourceDictionary Source="/Resources/Styles/ScrollViewer/ScrollViewerStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/ScrollViewer/ListViewStyle.xaml"/>
+
+                <ResourceDictionary Source="/Resources/Styles/Border/FieldsBlockBorderStyle.xaml"/>
+
+                <ResourceDictionary Source="/Resources/Styles/Button/ClassicButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/Button/ConnectButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/Button/DisconnectButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/Button/NavButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/Button/RedButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/Button/OrangeButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/Button/RichPresenceButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/Button/ThemeSwitchButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/Button/TrayButtonStyle.xaml"/>
+
+                <ResourceDictionary Source="/Resources/Styles/CheckBox/CheckBoxStyle.xaml"/>
+
+                <ResourceDictionary Source="/Resources/Styles/ComboBox/ComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/ComboBox/FieldsComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/ComboBox/LocaleComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/Label/Fields_BlockLabelStyle.xaml"/>
+
+                <ResourceDictionary Source="/Resources/Styles/Logger/Debug_LoggerTemplates.xaml"/>
+
+                <ResourceDictionary Source="/Resources/Styles/VisualTemplate/ActivityTemplates.xaml"/>
+                <ResourceDictionary Source="/Resources/Styles/VisualTemplate/VisualTemplateStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>       
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

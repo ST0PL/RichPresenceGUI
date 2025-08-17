@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <RootNamespace>RichPresenceGUI</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources/icons/favicon.ico</ApplicationIcon>
+    <Platforms>x64</Platforms>
+    <AssemblyTitle>Rich Presence GUI</AssemblyTitle>
+	<Copyright>ST0PL</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <InformationalVersion>v1.0.0</InformationalVersion>
+	<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icons\csharp.png" />
+    <None Remove="Resources\Icons\default_avatar.png" />
+    <None Remove="Resources\Icons\gray.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\csharp.png" />
+    <Resource Include="Resources\Icons\default_avatar.png" />
+	<Resource Include="Resources\Icons\favicon.ico" />
+	<Resource Include="Resources\Icons\gray.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DiscordRichPresence" Version="1.5.0.51" />
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ControlsLib\ControlsLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib"
+                    xmlns:prop="clr-namespace:ControlsLib.AttachedProperties;assembly=ControlsLib">
+    <Style x:Key="ListViewStyle" TargetType="{x:Type clib:ListView}" BasedOn="{StaticResource {x:Type clib:ListView}}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="VirtualizingPanel.ScrollUnit" Value="Pixel"/>
+        <Setter Property="CanSelect" Value="False"/>
+        <Setter Property="ItemBorderRadius" Value="5"/>
+        <Setter Property="HoverItemBackground" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="prop:ScrollViewerHelper.ScrollBarThumbWidth" Value="5"/>
+        <Setter Property="prop:ScrollViewerHelper.ScrollBarCornerRadius" Value="3"/>
+        <Setter Property="prop:ScrollViewerHelper.ScrollBarThumbCornerRadius" Value="3"/>
+    </Style>
+</ResourceDictionary>

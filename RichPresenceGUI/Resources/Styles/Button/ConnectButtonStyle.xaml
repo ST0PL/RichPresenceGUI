@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib">
+    <Style x:Key="ConnectButtonStyle" TargetType="{x:Type clib:Button}" BasedOn="{StaticResource ClassicButtonStyle}">
+        <Setter Property="Foreground" Value="{DynamicResource ConnectButtonTitleColor}"/>
+        <Setter Property="Background" Value="{DynamicResource ConnectButtonBackground}"/>
+        <Setter Property="HoverBackgroundColor" Value="{DynamicResource HoverConnectButtonBackground}"/>
+        <Setter Property="ClickBackgroundColor" Value="{DynamicResource ClickConnectButtonBackground}"/>
+    </Style>
+</ResourceDictionary>

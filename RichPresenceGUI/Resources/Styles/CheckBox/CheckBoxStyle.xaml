@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib">
+    <Style x:Key="CheckBoxStyle" TargetType="{x:Type clib:CheckBox}" BasedOn="{StaticResource {x:Type clib:CheckBox}}">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="TitleForeground" Value="{DynamicResource BaseTextColor}"/>
+        <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource CheckBoxColor}"/>
+        <Setter Property="TitleFontSize" Value="15"/>
+        <Setter Property="TitleFontWeight" Value="SemiBold"/>
+        <Setter Property="TitleOpacity" Value="0.7"/>
+        <Setter Property="CheckWidth" Value="20"/>
+        <Setter Property="CheckHeight" Value="20"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+</ResourceDictionary>

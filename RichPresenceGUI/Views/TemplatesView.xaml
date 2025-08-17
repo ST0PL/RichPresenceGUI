@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="RichPresenceGUI.Views.TemplatesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RichPresenceGUI.Views"
+             xmlns:cc="clr-namespace:RichPresenceGUI.CustomControls"
+             xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib"
+             xmlns:prop="clr-namespace:ControlsLib.AttachedProperties;assembly=ControlsLib"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.RenderTransform>
+        <TranslateTransform X="0" Y="0"/>
+    </UserControl.RenderTransform>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(TranslateTransform.Y)"
+                                     From="20"
+                                     To="0"
+                                     Duration="0:0:0.2"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    prop:PanelChildrenProperties.Margin="5,20,10,0">
+            <clib:Button Style="{StaticResource ClassicButtonStyle}"
+                         Command="{Binding SelectPathCommand}"
+                         CornerRadius="5"
+                         HorizontalAlignment="Stretch"
+                         HorizontalContentAlignment="Center"
+                         Height="35"
+                         Padding="5,0,5,0"
+                         Content="{DynamicResource templates_select_path}"
+                         FontSize="17"/>
+            <clib:Button Style="{StaticResource ClassicButtonStyle}"
+                         Command="{Binding RefreshCommand}"
+                         CornerRadius="5"
+                         HorizontalAlignment="Stretch"
+                         HorizontalContentAlignment="Center"
+                         Height="35"
+                         Padding="5,0,5,0"
+                         Content="{DynamicResource templates_refresh}"
+                         FontSize="17"/>
+        </StackPanel>
+        <clib:ListView Style="{StaticResource ListViewStyle}"
+                       Grid.Row="1"
+                       CanSelect="False"
+                       Margin="0,10,0,0"
+                       x:Name="listBox"
+                       Visibility="Visible"
+                       ItemsSource="{Binding Templates}"
+                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                       HorizontalAlignment="Stretch"
+                       HorizontalContentAlignment="Stretch"
+                       VerticalContentAlignment="Stretch"
+                       BorderThickness="0"
+                       Background="Transparent">
+              <clib:ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True"/>
+                    </ItemsPanelTemplate>
+              </clib:ListView.ItemsPanel>
+              <clib:ListView.ItemTemplate>
+                  <DataTemplate>
+                      <cc:VisualTemplate Style="{StaticResource VisualTemplateStyle}"
+                                         ActivityType="{Binding RichPresence.Type}"
+                                         Details="{Binding RichPresence.Details}"
+                                         State="{Binding RichPresence.State}"
+                                         StartTimestamp="{Binding RichPresence.Timestamps.StartUnixMilliseconds}"
+                                         EndTimestamp="{Binding RichPresence.Timestamps.EndUnixMilliseconds}"
+                                         LargeImageKey="{Binding RichPresence.Assets.LargeImageKey}"
+                                         LargeImageText="{Binding RichPresence.Assets.LargeImageText}"
+                                         SmallImageKey="{Binding RichPresence.Assets.SmallImageKey}"
+                                         SmallImageText="{Binding RichPresence.Assets.SmallImageText}"
+                                         Party="{Binding RichPresence.Party}"
+                                         ButtonsSource="{Binding RichPresence.Buttons}"
+                                         SelectCommand="{Binding RelativeSource={RelativeSource AncestorType=clib:ListView}, Path=DataContext.SelectTemplateCommand}"
+                                         RemoveCommand="{Binding RelativeSource={RelativeSource AncestorType=clib:ListView}, Path=DataContext.RemoveTemplateCommand}"
+                                         Width="350"/>
+                    </DataTemplate>
+              </clib:ListView.ItemTemplate>
+        </clib:ListView>
+        <Label Grid.Row="1"
+               Content="{DynamicResource templates_noItems}"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               FontSize="25"
+               FontWeight="SemiBold"
+               Foreground="{DynamicResource BaseTextColor}"
+               Opacity="0.5">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding HasItems}" Value="true">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
+    </Grid>
+</UserControl>

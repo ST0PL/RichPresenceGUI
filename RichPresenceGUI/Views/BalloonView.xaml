@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="RichPresenceGUI.Views.BalloonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RichPresenceGUI.Views"
+             xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib"
+             mc:Ignorable="d">
+    <Border CornerRadius="15"
+            BorderThickness="10"
+            BorderBrush="Transparent"
+            Cursor="Hand"
+            Margin="5"
+            Width="375"
+            Height="210"
+            Padding="10"
+            MouseDown="Border_MouseDown"
+            Background="{DynamicResource WindowBackground}"
+            UseLayoutRounding="True">
+        <Border.Effect>
+            <DropShadowEffect Color="Black"
+                              RenderingBias="Quality"
+                              BlurRadius="10"
+                              ShadowDepth="0"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Border Width="25"
+                        Height="25">
+                    <Border.Background>
+                        <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" 
+                                    ImageSource="/Resources/icons/gray.png"/>
+                    </Border.Background>
+                </Border>
+                <Label Style="{DynamicResource Fields_BlockLabelStyle}"
+                       Content="Rich presence GUI"
+                       Foreground="{DynamicResource BaseTextColor}"
+                       FontSize="15"
+                       FontWeight="SemiBold"/>
+            </StackPanel>
+            <Border Grid.Row="1"
+                    Margin="0,5,0,0"
+                    CornerRadius="10"
+                    Padding="8"
+                    Background="{DynamicResource BlockBackground}">
+                <clib:ScrollViewer Style="{DynamicResource ScrollViewerStyle}">
+                    <TextBlock x:Name="textBlock"
+                               Style="{DynamicResource TextBlockStyle}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="15"
+                               Opacity="0.8"/>
+                </clib:ScrollViewer>
+            </Border>
+            <clib:Button Click="Button_Click"
+                         Margin="0,5,0,0"
+                         Grid.Row="2"
+                         Style="{StaticResource ClassicButtonStyle}"
+                         Content="{DynamicResource balloon_dontshowagain}"
+                         Padding="5"
+                         CornerRadius="10"
+                         FontSize="15"/>
+        </Grid>
+    </Border>
+</UserControl>

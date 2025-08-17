@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib">
+    <Style x:Key="OrangeButtonStyle" TargetType="{x:Type clib:Button}" BasedOn="{StaticResource ClassicButtonStyle}">
+        <Setter Property="Background" Value="{DynamicResource OrangeButtonBackground}"/>
+        <Setter Property="HoverBackgroundColor" Value="{DynamicResource HoverOrangeButtonBackground}"/>
+        <Setter Property="ClickBackgroundColor" Value="{DynamicResource ClickOrangeButtonBackground}"/>
+    </Style>
+</ResourceDictionary>

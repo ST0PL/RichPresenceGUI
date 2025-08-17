@@ -1,0 +1,111 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:ControlsLib.Controls">
+    <Style TargetType="{x:Type controls:NavigationRadioButton}">
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
+        <Setter Property="Background" Value="{DynamicResource RadioButton.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource RadioButton.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="ClipToBounds" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:NavigationRadioButton}">
+                    <Border x:Name="radioButtonBorder"
+                            Padding="{TemplateBinding Padding}"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            MaxWidth="{TemplateBinding MaxWidth}"
+                            MaxHeight="{TemplateBinding MaxHeight}"
+                            MinHeight="{TemplateBinding MinHeight}"
+                            MinWidth="{TemplateBinding MinWidth}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="img"
+                                       Margin="{TemplateBinding ImageMargin}"
+                                       Source="{TemplateBinding ImageSource}"
+                                       Width="{TemplateBinding ImageWidth}"
+                                       Height="{TemplateBinding ImageHeight}"/>
+                                <ContentPresenter x:Name="contentPresenter"
+                                                  Grid.Column="1"
+                                                  Focusable="False"
+                                                  Margin="{TemplateBinding ContentMargin}"
+                                                  RecognizesAccessKey="True"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="TextWrapping" Value="Wrap"/>
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
+                            </Grid>
+                            <Border x:Name="flag"
+                                    Grid.Column="1"
+                                    Margin="{TemplateBinding FlagMargin}"
+                                    CornerRadius="{TemplateBinding FlagCornerRadius}"
+                                    Background="{TemplateBinding FlagBackground}"
+                                    Padding="{TemplateBinding FlagPadding}">
+                                <Border.RenderTransform>
+                                    <TranslateTransform X="{Binding FlagX, RelativeSource={RelativeSource TemplatedParent}}"
+                                                        Y="{Binding FlagY, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                </Border.RenderTransform>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="radioButtonBorder" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=HoverBackgroundColor}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="True">
+
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard x:Name="flagInAnimation">
+                                    <Storyboard>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <RemoveStoryboard BeginStoryboardName="flagInAnimation"/>
+                            </Trigger.ExitActions>
+                            <Setter Property="Background" TargetName="radioButtonBorder" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CheckedBackgroundColor}"/>
+                            <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CheckedForegroundColor}"/>
+                            <Setter Property="Source" TargetName="img" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CheckedImageSource}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard x:Name="flagOutAnimation">
+                                    <Storyboard>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <RemoveStoryboard BeginStoryboardName="flagOutAnimation"/>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="radioButtonBorder" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ClickBackgroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,94 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cc="clr-namespace:RichPresenceGUI.CustomControls"
+                    xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib"
+                    xmlns:selectors="clr-namespace:RichPresenceGUI.DataTemplateSelectors">
+    <Style x:Key="VisualTemplateStyle" TargetType="{x:Type cc:VisualTemplate}">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type cc:VisualTemplate}">
+                        <Border Background="{DynamicResource VisualTemplateBackground}"
+                                Margin="5,2,5,2"
+                                Padding="10,5,10,10"
+                                CornerRadius="5">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding FileNameWithoutExtension}"
+                                           Padding="5"
+                                           FontSize="15"
+                                           Opacity="1"
+                                           Foreground="{DynamicResource BaseTextColor}"
+                                           TextTrimming="CharacterEllipsis"
+                                           FontWeight="SemiBold"/>
+                                <Border Grid.Row="1"
+                                        Background="{DynamicResource VisualTemplateColor}"
+                                        CornerRadius="10"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Center">
+                                    <StackPanel Margin="5">
+                                        <ContentPresenter Grid.Column="1"
+                                                          Content="{Binding RelativeSource={RelativeSource AncestorType=cc:VisualTemplate}}">
+                                            <ContentPresenter.ContentTemplateSelector>
+                                                <selectors:ActivityTemplateSelector DefaultTemplate="{StaticResource activity_default_template}"
+                                                                                    PlayingWithPartyTemplate="{StaticResource activity_playingWithParty_template}"
+                                                                                    ListeningTemplate="{StaticResource activity_listening_template}"
+                                                                                    ListeningTimeBarTemplate="{StaticResource activity_listeningWithTimeBar_template}"
+                                                                                    WatchingTemplate="{StaticResource activity_watching_template}"
+                                                                                    WatchingTimeBarTemplate="{StaticResource activity_watchingWithTimeBar_template}"
+                                                                                    CompetingTemplate="{StaticResource activity_competing_template}"/>
+                                            </ContentPresenter.ContentTemplateSelector>
+                                        </ContentPresenter>
+                                        <clib:ListView ItemsSource="{TemplateBinding ButtonsSource}"
+                                                       HorizontalContentAlignment="Stretch"
+                                                       IsHitTestVisible="False"
+                                                       Background="Transparent"
+                                                       BorderThickness="0">
+                                            <clib:ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <clib:Button Style="{StaticResource RichPresenceButtonStyle}"
+                                                                 Margin="5,2.5,5,2.5"
+                                                                 CornerRadius="10"
+                                                                 Content="{Binding Label}"
+                                                                 FontSize="14"
+                                                                 Opacity="0.8"
+                                                                 Padding="8"/>
+                                                </DataTemplate>
+                                            </clib:ListView.ItemTemplate>
+                                        </clib:ListView>
+                                    </StackPanel>
+                                </Border>
+                                <StackPanel Grid.Row="2">
+                                    <clib:Button Style="{DynamicResource ClassicButtonStyle}"
+                                                 Command="{TemplateBinding SelectCommand}"
+                                                 CommandParameter="{Binding}"
+                                                 Margin="0,10,0,0"
+                                                 CornerRadius="5"
+                                                 HorizontalAlignment="Stretch"
+                                                 HorizontalContentAlignment="Center"
+                                                 Padding="5"
+                                                 Content="{DynamicResource templates_select}"
+                                                 FontSize="15"/>
+                                    <clib:Button Style="{StaticResource RedButtonStyle}"
+                                                 Command="{TemplateBinding RemoveCommand}"
+                                                 CommandParameter="{Binding}"
+                                                 Margin="0,10,0,0"
+                                                 CornerRadius="5"
+                                                 HorizontalAlignment="Stretch"
+                                                 HorizontalContentAlignment="Center"
+                                                 Padding="5"
+                                                 Content="{DynamicResource templates_remove}"
+                                                 FontSize="15"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>    
+</ResourceDictionary>

@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib">
+    <Style x:Key="TrayButtonStyle" TargetType="{x:Type clib:Button}" BasedOn="{StaticResource ClassicButtonStyle}">
+        <Setter Property="Background" Value="{DynamicResource TrayButtonBackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource BaseTextColor}"/>
+        <Setter Property="HoverBackgroundColor" Value="{DynamicResource HoverTrayButtonBackground}"/>
+        <Setter Property="ClickBackgroundColor" Value="{DynamicResource ClickTrayButtonBackground}"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Opacity" Value="0.5"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+</ResourceDictionary>

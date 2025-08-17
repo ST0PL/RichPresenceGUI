@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="RichPresenceGUI.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cc="clr-namespace:RichPresenceGUI.CustomControls"
+             xmlns:local="clr-namespace:RichPresenceGUI.Views"
+             xmlns:vm="clr-namespace:RichPresenceGUI.ViewModels"
+             xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Background="{DynamicResource MenuBackground}"
+                Margin="5"
+                CornerRadius="10"
+                Width="200">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,100,0,0">
+                    <clib:NavigationRadioButton Style="{StaticResource NavButtonStyle}"
+                                                ImageSource="{DynamicResource fields}"
+                                                CheckedImageSource="{DynamicResource fields_selected}"
+                                                Content="{DynamicResource nav_fields}"
+                                                Command="{Binding ChangeViewCommand}"
+                                                CommandParameter="0"
+                                                IsChecked="True"/>
+                    <clib:NavigationRadioButton Style="{StaticResource NavButtonStyle}"
+                                                ImageSource="{DynamicResource templates}"
+                                                CheckedImageSource="{DynamicResource templates_selected}"
+                                                Content="{DynamicResource nav_templates}"
+                                                Command="{Binding ChangeViewCommand}"
+                                                CommandParameter="1"/>
+                    <clib:NavigationRadioButton Style="{StaticResource NavButtonStyle}"
+                                                ImageSource="{DynamicResource debug}"
+                                                CheckedImageSource="{DynamicResource debug_selected}"
+                                                Content="{DynamicResource nav_debug}"
+                                                Command="{Binding ChangeViewCommand}"
+                                                CommandParameter="2"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"
+                            VerticalAlignment="Bottom"
+                            Margin="0,0,0,50">
+                    <cc:RoundedToggleButton Style="{DynamicResource ThemeSwitchButtonStyle}"
+                                            Command="{Binding ToggleThemeCommand}"
+                                            IsChecked="{Binding ThemeToggled}"
+                                            BorderBrush="Transparent"
+                                            BorderThickness="2"
+                                            Cursor="Hand"
+                                            Width="110"
+                                            HorizontalAlignment="Center"
+                                            CornerRadius="28"
+                                            Padding="0"
+                                            Background="#1b1b1d"
+                                            VerticalAlignment="Bottom"/>
+                    <clib:ComboBox Style="{DynamicResource LocaleComboBoxStyle}"
+                                   SelectedValue="{Binding CurrentLocale}"
+                                   ItemsSource="{Binding Locales}"
+                                   Command="{Binding ChangeLocaleCommand}"
+                                   CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=SelectedItem}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <ContentControl Grid.Column="1"
+                        Content="{Binding CurrentView}"/>
+    </Grid>
+</UserControl>

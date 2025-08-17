@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <SolidColorBrush x:Key="themeSwitch_background"
+                        Color="#1b1b1d"/>
+    <SolidColorBrush x:Key="themeSwitch_circle"
+                        Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="light_themeSwitch_background"
+                        Color="#bebebe"/>
+    <SolidColorBrush x:Key="light_themeSwitch_border"
+                        Color="#bebebe"/>
+
+    <Color x:Key="themeSwitch_border_in">#5865f2</Color>
+    <Color x:Key="themeSwitch_border_out">#00FFFFFF</Color>    
+</ResourceDictionary>

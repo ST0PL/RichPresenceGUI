@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib">
+    <Style x:Key="NavButtonStyle" TargetType="{x:Type clib:NavigationRadioButton}" BasedOn="{StaticResource {x:Type clib:NavigationRadioButton}}">
+        <Setter Property="FlagBackground" Value="{DynamicResource CheckedNavButtonTitleColor}"/>
+        <Setter Property="FlagPadding" Value="5"/>
+        <Setter Property="FlagMargin" Value="5"/>
+        <Setter Property="FlagX" Value="20"/>
+        <Setter Property="FlagEndX" Value="0"/>
+        <Setter Property="FlagAnimationDuration" Value="0:0:0.2"/>
+        <Setter Property="FlagCornerRadius" Value="5"/>
+        <Setter Property="ContentMargin" Value="5,0,0,0"/>
+        <Setter Property="ImageWidth" Value="30"/>
+        <Setter Property="ImageHeight" Value="30"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="10,0,0,0"/>
+        <Setter Property="ClickBackgroundColor" Value="{DynamicResource ClickNavButtonBackground}"/>
+        <Setter Property="CheckedBackgroundColor" Value="{DynamicResource CheckedNavButtonBackgroud}"/>
+        <Setter Property="HoverBackgroundColor" Value="{DynamicResource HoverNavButtonBackground}"/>
+        <Setter Property="CheckedForegroundColor" Value="{DynamicResource CheckedNavButtonTitleColor}"/>
+        <Setter Property="Background" Value="{DynamicResource NavButtonBackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource NavButtonTitleColor}"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="MaxHeight" Value="100"/>
+        <Setter Property="Width" Value="180"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+</ResourceDictionary>
