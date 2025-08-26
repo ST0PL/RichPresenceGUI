@@ -137,57 +137,5 @@ namespace ControlsLib.Controls
             };
             return (xAnimation, yAnimation);
         }
-        private static void FlagChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            try
-            {
-                var button = (NavigationRadioButton)d;
-                var storyboards = GetBeginStoryboards(button);
-                var InBeginStoryboard = storyboards["flagInAnimation"];
-                var OutBeginStoryboard = storyboards["flagOutAnimation"];
-                double flagX = (double)d.GetValue(FlagXProperty);
-                double flagEndX = (double)d.GetValue(FlagEndXProperty);
-                double flagY = (double)d.GetValue(FlagYProperty);
-                double flagEndY = (double)d.GetValue(FlagEndYProperty);
-                Duration duration = (Duration)d.GetValue(FlagAnimationDurationProperty);
-
-                ChangeAnimation(InBeginStoryboard, flagX, flagEndX, flagY, flagEndY, duration);
-                ChangeAnimation(OutBeginStoryboard, flagEndX, flagX, flagEndY, flagY, duration);
-            }
-            catch (Exception ex) { }
-        }
-
-        private static void ChangeAnimation(
-            BeginStoryboard beginStoryboard,
-            double xFrom,
-            double xTo,
-            double yFrom,
-            double yTo,
-            Duration duration)
-        {
-            var xAnimation = new DoubleAnimation()
-            {
-                From = xFrom,
-                To = xTo,
-            };
-            var yAnimation = new DoubleAnimation()
-            {
-                From = yFrom,
-                To = yTo,
-                Duration = duration
-            };
-            var storyboard = new Storyboard();
-            Storyboard.SetTargetName(xAnimation, "flag");
-            Storyboard.SetTargetName(yAnimation, "flag");
-            Storyboard.SetTargetProperty(yAnimation, new PropertyPath("(RenderTransform).(TranslateTransform.X)"));
-            Storyboard.SetTargetProperty(yAnimation, new PropertyPath("(RenderTransform).(TranslateTransform.Y)"));
-            storyboard.Children.Add(xAnimation);
-            storyboard.Children.Add(yAnimation);
-            beginStoryboard.Storyboard = storyboard;
-        }
-        private static Dictionary<string, BeginStoryboard> GetBeginStoryboards(NavigationRadioButton btn)
-            => btn.Template.Triggers.SelectMany(t => t.EnterActions.Where(a => a is BeginStoryboard bs)
-                .Select(a => { var sb = a as BeginStoryboard; return KeyValuePair.Create(sb.Name, sb); })).ToDictionary();
-
     }
 }
