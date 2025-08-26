@@ -48,7 +48,7 @@
 
 # Getting Started
 
-Following this steps you can easily setup your Discord Rich Presence
+Follow these steps you can easily setup your Discord Rich Presence
 
 1. Get the [**latest release**](https://github.com/ST0PL/RichPresenceGUI/releases/latest)
 2. Go to [**My Applications**](https://discord.com/developers/applications)
