@@ -1,5 +1,4 @@
-﻿using ControlsLib.Models;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Windows.Data;
 
 namespace ControlsLib.Converters

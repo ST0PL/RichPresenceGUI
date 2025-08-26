@@ -1,4 +1,4 @@
-﻿namespace ControlsLib.Models
+﻿namespace ControlsLib
 {
     public class TimeBarContext
     {

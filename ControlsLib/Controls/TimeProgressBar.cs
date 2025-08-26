@@ -1,5 +1,4 @@
 ﻿using ControlsLib.Controls.Interfaces;
-using ControlsLib.Models;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
