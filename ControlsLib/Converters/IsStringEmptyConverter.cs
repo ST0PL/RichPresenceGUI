@@ -6,7 +6,7 @@ namespace ControlsLib.Converters
     public class IsStringEmptyConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-            => value is string str ? string.IsNullOrEmpty(str) : true;
+            => value is not string str || string.IsNullOrEmpty(str);
 
         public object? ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
             => null;

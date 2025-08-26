@@ -6,12 +6,13 @@ namespace ControlsLib.Controls
 {
     public class Button : System.Windows.Controls.Button, IRounded, IResponsive
     {
-        public static DependencyProperty CornerRadiusProperty =
+        public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(Button));
-        public static DependencyProperty HoverBackgroundColorProperty =
+        public static readonly DependencyProperty HoverBackgroundColorProperty =
             DependencyProperty.Register("HoverBackgroundColor", typeof(Brush), typeof(Button));
-        public static DependencyProperty ClickBackgroundColorProperty =
+        public static readonly DependencyProperty ClickBackgroundColorProperty =
             DependencyProperty.Register("ClickBackgroundColor", typeof(Brush), typeof(Button));
+
         public CornerRadius CornerRadius
         {
             get => (CornerRadius)GetValue(CornerRadiusProperty);

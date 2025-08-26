@@ -13,7 +13,9 @@ namespace ControlsLib.Controls
         
         public static readonly DependencyProperty ItemsCornerRadiusProperty =
             DependencyProperty.Register("ItemsCornerRadius", typeof(CornerRadius), typeof(ComboBox));
-        
+        public static readonly DependencyProperty ItemsForegroundProperty =
+            DependencyProperty.Register("ItemsForeground", typeof(Brush), typeof(ComboBox));
+
         public static readonly DependencyProperty PopupBackgroundProperty =
             DependencyProperty.Register("PopupBackground", typeof(Brush), typeof(ComboBox));
         public static readonly DependencyProperty PopupCornerRadiusProperty =
@@ -31,31 +33,28 @@ namespace ControlsLib.Controls
             DependencyProperty.Register("PopupMaxHeight", typeof(double), typeof(ComboBox),
                 new FrameworkPropertyMetadata(double.PositiveInfinity));
 
-        public static DependencyProperty HoverBackgroundColorProperty =
+        public static readonly DependencyProperty HoverBackgroundColorProperty =
             DependencyProperty.Register("HoverBackgroundColor", typeof(Brush), typeof(ComboBox));
-        public static DependencyProperty ClickBackgroundColorProperty =
+        public static readonly DependencyProperty ClickBackgroundColorProperty =
             DependencyProperty.Register("ClickBackgroundColor", typeof(Brush), typeof(ComboBox));
-        public static DependencyProperty HoverItemBackgroundProperty =
+        public static readonly DependencyProperty HoverItemBackgroundProperty =
             DependencyProperty.Register("HoverItemBackground", typeof(Brush), typeof(ComboBox));
-        public static DependencyProperty SelectedItemBackgroundProperty =
+        public static readonly DependencyProperty SelectedItemBackgroundProperty =
             DependencyProperty.Register("SelectedItemBackground", typeof(Brush), typeof(ComboBox));
         
-        public static DependencyProperty CommandProperty =
+        public static readonly DependencyProperty CommandProperty =
             DependencyProperty.Register("Command", typeof(ICommand), typeof(ComboBox));
-        public static DependencyProperty CommandParameterProperty =
+        public static readonly DependencyProperty CommandParameterProperty =
             DependencyProperty.Register("CommandParameter", typeof(object), typeof(ComboBox));
-        public static DependencyProperty CommandTargetProperty =
+        public static readonly DependencyProperty CommandTargetProperty =
             DependencyProperty.Register("CommandTarget", typeof(IInputElement), typeof(ComboBox));
         
-        public static DependencyProperty PopupMarginProperty =
+        public static readonly DependencyProperty PopupMarginProperty =
             DependencyProperty.Register("PopupMargin", typeof(Thickness), typeof(ComboBox));
-        public static DependencyProperty PopupPaddingProperty =
+        public static readonly DependencyProperty PopupPaddingProperty =
             DependencyProperty.Register("PopupPadding", typeof(Thickness), typeof(ComboBox));
 
-        public static DependencyProperty ItemsForegroundProperty =
-            DependencyProperty.Register("ItemsForeground", typeof(Brush), typeof(ComboBox));
-
-        public static DependencyProperty PopupEffectProperty =
+        public static readonly DependencyProperty PopupEffectProperty =
             DependencyProperty.Register("PopupEffect", typeof(Effect), typeof(ComboBox));
 
 
@@ -68,6 +67,11 @@ namespace ControlsLib.Controls
         {
             get => (CornerRadius)GetValue(CornerRadiusProperty);
             set => SetValue(CornerRadiusProperty, value);
+        }
+        public Brush ItemsForeground
+        {
+            get => (Brush)GetValue(ItemsForegroundProperty);
+            set => SetValue(ItemsForegroundProperty, value);
         }
         public Brush HoverBackgroundColor
         {
@@ -148,12 +152,6 @@ namespace ControlsLib.Controls
         {
             get => (Thickness)GetValue(PopupPaddingProperty);
             set => SetValue(PopupPaddingProperty, value);
-        }
-
-        public Brush ItemsForeground
-        {
-            get => (Brush)GetValue(ItemsForegroundProperty);
-            set => SetValue(ItemsForegroundProperty, value);
         }
 
         public Effect PopupEffect

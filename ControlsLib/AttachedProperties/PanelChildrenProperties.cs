@@ -6,7 +6,7 @@ namespace ControlsLib.AttachedProperties
 {
     public class PanelChildrenProperties
     {
-        private static Dictionary<string, PropertyInfo> Properties
+        private static readonly Dictionary<string, PropertyInfo> Properties
             = typeof(Panel).GetProperties().ToDictionary(p => p.Name);
 
         public static readonly DependencyProperty MarginProperty
@@ -43,15 +43,17 @@ namespace ControlsLib.AttachedProperties
                     ApplyValue(panel, Properties[propertyName], e.NewValue);
                 else
                 {
-                    RoutedEventHandler onLoad = null;
+                    RoutedEventHandler onLoad = null!;
                     onLoad = (object sender, RoutedEventArgs args)
                         => { ApplyValue(panel, Properties[propertyName], e.NewValue); panel.Loaded -= onLoad; };
                     panel.Loaded += onLoad;
                 }
             }
         }
+
         public void OnLoad(object sender, RoutedEventArgs args, Action action)
             => action();
+
         static void ApplyValue(Panel panel, PropertyInfo property, object newValue)
         {
             foreach (FrameworkElement item in panel.Children)

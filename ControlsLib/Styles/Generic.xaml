@@ -12,9 +12,8 @@
         <ResourceDictionary Source="/ControlsLib;component/Styles/ScrollViewerStyle.xaml"/>
         <ResourceDictionary Source="/ControlsLib;component/Styles/TextBoxStyle.xaml"/>
         <ResourceDictionary Source="/ControlsLib;component/Styles/TimeProgressBarStyle.xaml"/>
-        <ResourceDictionary Source="/ControlsLib;component/Styles/ToggleButtonStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    
+
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>

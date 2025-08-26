@@ -9,22 +9,22 @@ namespace ControlsLib.Controls
     {
         public static readonly DependencyProperty TimeContextProperty
             = DependencyProperty.Register("TimeContext", typeof(TimeBarContext), typeof(TimeProgressBar));
-        public static DependencyProperty CornerRadiusProperty =
+        public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(TimeProgressBar));
-        public static DependencyProperty ProgressBarForegroundProperty =
+        public static readonly DependencyProperty ProgressBarForegroundProperty =
             DependencyProperty.Register("ProgressBarForeground", typeof(Brush), typeof(TimeProgressBar));
-        public static DependencyProperty ProgressBarBackgroundProperty =
+        public static readonly DependencyProperty ProgressBarBackgroundProperty =
             DependencyProperty.Register("ProgressBarBackground", typeof(Brush), typeof(TimeProgressBar));
-        public static DependencyProperty ProgressBarBorderBrushProperty =
+        public static readonly DependencyProperty ProgressBarBorderBrushProperty =
             DependencyProperty.Register("ProgressBarBorderBrush", typeof(Brush), typeof(TimeProgressBar));
-        public static DependencyProperty ProgressBarCornerRadiusProperty =
+        public static readonly DependencyProperty ProgressBarCornerRadiusProperty =
             DependencyProperty.Register("ProgressBarCornerRadius", typeof(CornerRadius), typeof(TimeProgressBar));
-        public static DependencyProperty ProgressBarBorderThicknessProperty =
+        public static readonly DependencyProperty ProgressBarBorderThicknessProperty =
             DependencyProperty.Register("ProgressBarBorderThickness", typeof(Thickness), typeof(TimeProgressBar));
-        public static DependencyProperty ProgressBarWidthProperty =
+        public static readonly DependencyProperty ProgressBarWidthProperty =
             DependencyProperty.Register("ProgressBarWidth", typeof(double), typeof(TimeProgressBar),
                 new PropertyMetadata(double.NaN));
-        public static DependencyProperty ProgressBarHeightProperty =
+        public static readonly DependencyProperty ProgressBarHeightProperty =
             DependencyProperty.Register("ProgressBarHeight", typeof(double), typeof(TimeProgressBar),
                 new PropertyMetadata(double.NaN));
 

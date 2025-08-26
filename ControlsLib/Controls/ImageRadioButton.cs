@@ -7,28 +7,33 @@ namespace ControlsLib.Controls
 {
     public class ImageRadioButton : RadioButton, IImageControl
     {
-        public static DependencyProperty CornerRadiusProperty =
+        public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(ImageRadioButton));
-        public static DependencyProperty ImageSourceProperty =
+        public static readonly DependencyProperty ImageSourceProperty =
             DependencyProperty.Register("ImageSource", typeof(ImageSource), typeof(ImageRadioButton));
-        public static DependencyProperty CheckedImageSourceProperty =
+        public static readonly DependencyProperty CheckedImageSourceProperty =
             DependencyProperty.Register("CheckedImageSource", typeof(ImageSource), typeof(ImageRadioButton));
-        public static DependencyProperty HoverBackgroundColorProperty =
+        public static readonly DependencyProperty HoverBackgroundColorProperty =
             DependencyProperty.Register("HoverBackgroundColor", typeof(Brush), typeof(ImageRadioButton));
-        public static DependencyProperty ClickBackgroundColorProperty =
+        public static readonly DependencyProperty ClickBackgroundColorProperty =
             DependencyProperty.Register("ClickBackgroundColor", typeof(Brush), typeof(ImageRadioButton));
-        public static DependencyProperty CheckedBackgroundColorProperty =
+        public static readonly DependencyProperty CheckedBackgroundColorProperty =
             DependencyProperty.Register("CheckedBackgroundColor", typeof(Brush), typeof(ImageRadioButton));
-        public static DependencyProperty CheckedForegroundColorProperty =
+        public static readonly DependencyProperty CheckedForegroundColorProperty =
             DependencyProperty.Register("CheckedForegroundColor", typeof(Brush), typeof(ImageRadioButton));
-        public static DependencyProperty ImageWidthProperty =
-            DependencyProperty.Register("ImageWidth", typeof(double), typeof(ImageRadioButton));
-        public static DependencyProperty ImageHeightProperty =
-            DependencyProperty.Register("ImageHeight", typeof(double), typeof(ImageRadioButton));
-        public static DependencyProperty ImageMarginProperty =
+        public static readonly DependencyProperty CheckedBorderBrushProperty =
+            DependencyProperty.Register("CheckedBorderBrush", typeof(Brush), typeof(ImageRadioButton));
+        public static readonly DependencyProperty ImageWidthProperty =
+            DependencyProperty.Register("ImageWidth", typeof(double), typeof(ImageRadioButton),
+                new UIPropertyMetadata(double.NaN));
+        public static readonly DependencyProperty ImageHeightProperty =
+            DependencyProperty.Register("ImageHeight", typeof(double), typeof(ImageRadioButton),
+                new UIPropertyMetadata(double.NaN));
+        public static readonly DependencyProperty ImageMarginProperty =
             DependencyProperty.Register("ImageMargin", typeof(Thickness), typeof(ImageRadioButton));
-        public static DependencyProperty ContentMarginProperty =
+        public static readonly DependencyProperty ContentMarginProperty =
             DependencyProperty.Register("ContentMargin", typeof(Thickness), typeof(ImageRadioButton));
+
         public CornerRadius CornerRadius
         {
             get => (CornerRadius)GetValue(CornerRadiusProperty);
@@ -64,6 +69,11 @@ namespace ControlsLib.Controls
             get => (Brush)GetValue(CheckedForegroundColorProperty);
             set => SetValue(CheckedForegroundColorProperty, value);
         }
+        public Brush CheckedBorderBrush
+        {
+            get => (Brush)GetValue(CheckedBorderBrushProperty);
+            set => SetValue(CheckedBorderBrushProperty, value);
+        }
         public double ImageWidth
         {
             get => (double)GetValue(ImageWidthProperty);
@@ -84,6 +94,7 @@ namespace ControlsLib.Controls
             get => (Thickness)GetValue(ContentMarginProperty);
             set => SetValue(ContentMarginProperty, value);
         }
+
         static ImageRadioButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(

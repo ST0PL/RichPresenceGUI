@@ -69,6 +69,7 @@ namespace ControlsLib.Controls
             get => (double)GetValue(ScrollBarThumbWidthProperty);
             set => SetValue(ScrollBarThumbWidthProperty, value);
         }
+
         static ScrollViewer()
             => DefaultStyleKeyProperty.OverrideMetadata(typeof(ScrollViewer),
                 new FrameworkPropertyMetadata(typeof(ScrollViewer)));

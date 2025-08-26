@@ -5,7 +5,7 @@ namespace ControlsLib.Controls
 {
     public class ProgressBar : System.Windows.Controls.ProgressBar, IRounded
     {
-        public static DependencyProperty CornerRadiusProperty =
+        public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(ProgressBar));
         public CornerRadius CornerRadius
         {

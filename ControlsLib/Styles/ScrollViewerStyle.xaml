@@ -113,7 +113,6 @@
                             Background="{Binding ScrollBarThumbBackground, RelativeSource={RelativeSource AncestorType=controls:ScrollViewer}}"
                             Height="{TemplateBinding Height}"
                             SnapsToDevicePixels="True"
-                            Width="{Binding ScrollBarThumbWidth, RelativeSource={RelativeSource AncestorType=controls:ScrollViewer}}"
                             CornerRadius="{Binding ScrollBarThumbCornerRadius, RelativeSource={RelativeSource AncestorType=controls:ScrollViewer}}"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">

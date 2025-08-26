@@ -16,6 +16,7 @@
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="PopupEffect">
             <Setter.Value>
                 <DropShadowEffect Color="Black"

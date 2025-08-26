@@ -7,24 +7,26 @@ namespace ControlsLib.Controls
 {
     public class NavigationRadioButton : ImageRadioButton
     {
-        public static DependencyProperty FlagXProperty =
+        public static readonly DependencyProperty FlagXProperty =
             DependencyProperty.Register("FlagX", typeof(double), typeof(NavigationRadioButton));
-        public static DependencyProperty FlagYProperty =
+        public static readonly DependencyProperty FlagYProperty =
             DependencyProperty.Register("FlagY", typeof(double), typeof(NavigationRadioButton));
-        public static DependencyProperty FlagEndXProperty =
+        public static readonly DependencyProperty FlagEndXProperty =
             DependencyProperty.Register("FlagEndX", typeof(double), typeof(NavigationRadioButton));
-        public static DependencyProperty FlagEndYProperty =
+        public static readonly DependencyProperty FlagEndYProperty =
             DependencyProperty.Register("FlagEndY", typeof(double), typeof(NavigationRadioButton));
-        public static DependencyProperty FlagAnimationDurationProperty =
+        public static readonly DependencyProperty FlagAnimationDurationProperty =
             DependencyProperty.Register("FlagAnimationDuration", typeof(Duration), typeof(NavigationRadioButton));
-        public static DependencyProperty FlagCornerRadiusProperty =
+        public static readonly DependencyProperty FlagCornerRadiusProperty =
             DependencyProperty.Register("FlagCornerRadius", typeof(CornerRadius), typeof(NavigationRadioButton));
-        public static DependencyProperty FlagBackgroundProperty =
+        public static readonly DependencyProperty FlagBackgroundProperty =
             DependencyProperty.Register("FlagBackground", typeof(Brush), typeof(NavigationRadioButton));
-        public static DependencyProperty FlagPaddingProperty =
+        public static readonly DependencyProperty FlagPaddingProperty =
             DependencyProperty.Register("FlagPadding", typeof(Thickness), typeof(NavigationRadioButton));
-        public static DependencyProperty FlagMarginProperty =
+        public static readonly DependencyProperty FlagMarginProperty =
             DependencyProperty.Register("FlagMargin", typeof(Thickness), typeof(NavigationRadioButton));
+        public static readonly DependencyProperty FlagPositionProperty =
+            DependencyProperty.Register("FlagPosition", typeof(FlagPosition), typeof(NavigationRadioButton));
 
         public double FlagX
         {
@@ -71,14 +73,17 @@ namespace ControlsLib.Controls
             get => (Thickness)GetValue(FlagMarginProperty);
             set => SetValue(FlagCornerRadiusProperty, value);
         }
-
+        public FlagPosition FlagPosition
+        {
+            get => (FlagPosition)GetValue(FlagPositionProperty);
+            set => SetValue(FlagPositionProperty, value);
+        }
         static NavigationRadioButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
                 typeof(NavigationRadioButton),
                 new FrameworkPropertyMetadata(typeof(NavigationRadioButton)));
         }
-
         public NavigationRadioButton()
         {
             DependencyPropertyDescriptor.FromProperty(IsCheckedProperty,
@@ -132,57 +137,57 @@ namespace ControlsLib.Controls
             };
             return (xAnimation, yAnimation);
         }
-        //private static void FlagChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        //{
-        //    try
-        //    {
-        //        var button = (NavigationRadioButton)d;
-        //        var storyboards = GetBeginStoryboards(button);
-        //        var InBeginStoryboard = storyboards["flagInAnimation"];
-        //        var OutBeginStoryboard = storyboards["flagOutAnimation"];
-        //        double flagX = (double)d.GetValue(FlagXProperty);
-        //        double flagEndX = (double)d.GetValue(FlagEndXProperty);
-        //        double flagY = (double)d.GetValue(FlagYProperty);
-        //        double flagEndY = (double)d.GetValue(FlagEndYProperty);
-        //        Duration duration = (Duration)d.GetValue(FlagAnimationDurationProperty);
+        private static void FlagChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            try
+            {
+                var button = (NavigationRadioButton)d;
+                var storyboards = GetBeginStoryboards(button);
+                var InBeginStoryboard = storyboards["flagInAnimation"];
+                var OutBeginStoryboard = storyboards["flagOutAnimation"];
+                double flagX = (double)d.GetValue(FlagXProperty);
+                double flagEndX = (double)d.GetValue(FlagEndXProperty);
+                double flagY = (double)d.GetValue(FlagYProperty);
+                double flagEndY = (double)d.GetValue(FlagEndYProperty);
+                Duration duration = (Duration)d.GetValue(FlagAnimationDurationProperty);
 
-        //        ChangeAnimation(InBeginStoryboard, flagX, flagEndX, flagY, flagEndY, duration);
-        //        ChangeAnimation(OutBeginStoryboard, flagEndX, flagX, flagEndY, flagY, duration);
-        //    }
-        //    catch (Exception ex) { }
-        //}
+                ChangeAnimation(InBeginStoryboard, flagX, flagEndX, flagY, flagEndY, duration);
+                ChangeAnimation(OutBeginStoryboard, flagEndX, flagX, flagEndY, flagY, duration);
+            }
+            catch (Exception ex) { }
+        }
 
-        //private static void ChangeAnimation(
-        //    BeginStoryboard beginStoryboard,
-        //    double xFrom,
-        //    double xTo,
-        //    double yFrom,
-        //    double yTo,
-        //    Duration duration)
-        //{
-        //    var xAnimation = new DoubleAnimation()
-        //    {
-        //        From = xFrom,
-        //        To = xTo,
-        //    };
-        //    var yAnimation = new DoubleAnimation()
-        //    {
-        //        From = yFrom,
-        //        To = yTo,
-        //        Duration = duration
-        //    };
-        //    var storyboard = new Storyboard();
-        //    Storyboard.SetTargetName(xAnimation, "flag");
-        //    Storyboard.SetTargetName(yAnimation, "flag");
-        //    Storyboard.SetTargetProperty(yAnimation, new PropertyPath("(RenderTransform).(TranslateTransform.X)"));
-        //    Storyboard.SetTargetProperty(yAnimation, new PropertyPath("(RenderTransform).(TranslateTransform.Y)"));
-        //    storyboard.Children.Add(xAnimation);
-        //    storyboard.Children.Add(yAnimation);
-        //    beginStoryboard.Storyboard = storyboard;
-        //}
-        //private static Dictionary<string, BeginStoryboard> GetBeginStoryboards(NavigationRadioButton btn)
-        //    => btn.Template.Triggers.SelectMany(t => t.EnterActions.Where(a => a is BeginStoryboard bs)
-        //        .Select(a => { var sb = a as BeginStoryboard; return KeyValuePair.Create(sb.Name, sb); })).ToDictionary();
+        private static void ChangeAnimation(
+            BeginStoryboard beginStoryboard,
+            double xFrom,
+            double xTo,
+            double yFrom,
+            double yTo,
+            Duration duration)
+        {
+            var xAnimation = new DoubleAnimation()
+            {
+                From = xFrom,
+                To = xTo,
+            };
+            var yAnimation = new DoubleAnimation()
+            {
+                From = yFrom,
+                To = yTo,
+                Duration = duration
+            };
+            var storyboard = new Storyboard();
+            Storyboard.SetTargetName(xAnimation, "flag");
+            Storyboard.SetTargetName(yAnimation, "flag");
+            Storyboard.SetTargetProperty(yAnimation, new PropertyPath("(RenderTransform).(TranslateTransform.X)"));
+            Storyboard.SetTargetProperty(yAnimation, new PropertyPath("(RenderTransform).(TranslateTransform.Y)"));
+            storyboard.Children.Add(xAnimation);
+            storyboard.Children.Add(yAnimation);
+            beginStoryboard.Storyboard = storyboard;
+        }
+        private static Dictionary<string, BeginStoryboard> GetBeginStoryboards(NavigationRadioButton btn)
+            => btn.Template.Triggers.SelectMany(t => t.EnterActions.Where(a => a is BeginStoryboard bs)
+                .Select(a => { var sb = a as BeginStoryboard; return KeyValuePair.Create(sb.Name, sb); })).ToDictionary();
 
     }
 }

@@ -5,9 +5,11 @@
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource TextBox.Static.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-        <Setter Property="TitleOpacity" Value="1"/>
         <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="TitleOpacity" Value="1"/>
         <Setter Property="TitleForeground" Value="Black"/>
+        <Setter Property="PlaceholderForeground" Value="Black"/>
+        <Setter Property="PlaceholderOpacity" Value="1"/>
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
@@ -30,8 +32,8 @@
                                FontStyle="{TemplateBinding TitleFontStyle}"
                                Content="{TemplateBinding Title}"
                                Opacity="{TemplateBinding TitleOpacity}"/>
-                        <Border Grid.Row="1"
-                                x:Name="border"
+                        <Border x:Name="border"
+                                Grid.Row="1"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}" 
                                 BorderThickness="{TemplateBinding BorderThickness}"
@@ -39,10 +41,29 @@
                                 Width="{TemplateBinding Width}"
                                 Height="{TemplateBinding Height}"
                                 SnapsToDevicePixels="True">
-                            <controls:ScrollViewer VerticalAlignment="Stretch" Style="{DynamicResource ScrollViewerStyle}" x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                            <Grid>
+                                <TextBlock x:Name="placeholder"
+                                           Background="Transparent"
+                                           Foreground="{TemplateBinding PlaceholderForeground}"
+                                           FontSize="{TemplateBinding PlaceholderFontSize}"
+                                           FontFamily="{TemplateBinding PlaceholderFontFamily}"
+                                           FontStretch="{TemplateBinding PlaceholderFontStretch}"
+                                           FontStyle="{TemplateBinding PlaceholderFontStyle}"
+                                           FontWeight="{TemplateBinding PlaceholderFontWeight}"
+                                           Opacity="{TemplateBinding PlaceholderOpacity}"
+                                           IsHitTestVisible="False"
+                                           VerticalAlignment="Center"
+                                           Visibility="Collapsed"
+                                           Margin="{TemplateBinding Padding}"
+                                           Text="{TemplateBinding Placeholder}"/>
+                                <controls:ScrollViewer VerticalAlignment="Stretch" Style="{DynamicResource ScrollViewerStyle}" x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                            </Grid>
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="Text" Value="">
+                            <Setter TargetName="placeholder" Property="Visibility" Value="Visible"/>
+                        </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Opacity" TargetName="grid" Value="0.56"/>
                         </Trigger>

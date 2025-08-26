@@ -6,28 +6,29 @@ namespace ControlsLib.Controls
 {
     public class CheckBox : System.Windows.Controls.CheckBox, ISigned, IRounded
     {
-        public static DependencyProperty TitleProperty =
+        public static readonly DependencyProperty TitleProperty =
             DependencyProperty.Register("Title", typeof(string), typeof(CheckBox));
-        public static DependencyProperty TitleFontSizeProperty =
+        public static readonly DependencyProperty TitleFontSizeProperty =
             DependencyProperty.Register("TitleFontSize", typeof(double), typeof(CheckBox));
-        public static DependencyProperty TitleFontWeightProperty =
+        public static readonly DependencyProperty TitleFontWeightProperty =
             DependencyProperty.Register("TitleFontWeight", typeof(FontWeight), typeof(CheckBox));
-        public static DependencyProperty TitleFontStyleProperty =
+        public static readonly DependencyProperty TitleFontStyleProperty =
             DependencyProperty.Register("TitleFontStyle", typeof(FontStyle), typeof(CheckBox));
-        public static DependencyProperty TitleFontFamilyProperty =
+        public static readonly DependencyProperty TitleFontFamilyProperty =
             DependencyProperty.Register("TitleFontFamily", typeof(FontFamily), typeof(CheckBox));
-        public static DependencyProperty TitleFontStretchProperty =
+        public static readonly DependencyProperty TitleFontStretchProperty =
             DependencyProperty.Register("TitleFontStretch", typeof(FontStretch), typeof(CheckBox));
-        public static DependencyProperty TitleForegroundProperty =
+        public static readonly DependencyProperty TitleForegroundProperty =
             DependencyProperty.Register("TitleForeground", typeof(Brush), typeof(CheckBox));
-        public static DependencyProperty TitleOpacityProperty =
+        public static readonly DependencyProperty TitleOpacityProperty =
             DependencyProperty.Register("TitleOpacity", typeof(double), typeof(CheckBox));
-        public static DependencyProperty CornerRadiusProperty =
+        public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(CheckBox));
-        public static DependencyProperty CheckWidthProperty =
+        public static readonly DependencyProperty CheckWidthProperty =
             DependencyProperty.Register("CheckWidth", typeof(double), typeof(CheckBox));
-        public static DependencyProperty CheckHeightProperty =
+        public static readonly DependencyProperty CheckHeightProperty =
             DependencyProperty.Register("CheckHeight", typeof(double), typeof(CheckBox));
+
         public string Title
         {
             get => (string)GetValue(TitleProperty);

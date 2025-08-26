@@ -6,39 +6,39 @@ namespace ControlsLib.Controls
 {
     public class TextBox : System.Windows.Controls.TextBox, IRounded, ISigned
     {
-        public static DependencyProperty CornerRadiusProperty =
+        public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(TextBox));
-        public static DependencyProperty TitleProperty =
+        public static readonly DependencyProperty TitleProperty =
             DependencyProperty.Register("Title", typeof(string), typeof(TextBox));
-        public static DependencyProperty TitleFontSizeProperty =
+        public static readonly DependencyProperty TitleFontSizeProperty =
             DependencyProperty.Register("TitleFontSize", typeof(double), typeof(TextBox));
-        public static DependencyProperty TitleFontWeightProperty =
+        public static readonly DependencyProperty TitleFontWeightProperty =
             DependencyProperty.Register("TitleFontWeight", typeof(FontWeight), typeof(TextBox));
-        public static DependencyProperty TitleFontStyleProperty =
+        public static readonly DependencyProperty TitleFontStyleProperty =
             DependencyProperty.Register("TitleFontStyle", typeof(FontStyle), typeof(TextBox));
-        public static DependencyProperty TitleFontFamilyProperty =
+        public static readonly DependencyProperty TitleFontFamilyProperty =
             DependencyProperty.Register("TitleFontFamily", typeof(FontFamily), typeof(TextBox));
-        public static DependencyProperty TitleFontStretchProperty =
+        public static readonly DependencyProperty TitleFontStretchProperty =
             DependencyProperty.Register("TitleFontStretch", typeof(FontStretch), typeof(TextBox));
-        public static DependencyProperty TitleForegroundProperty =
+        public static readonly DependencyProperty TitleForegroundProperty =
             DependencyProperty.Register("TitleForeground", typeof(Brush), typeof(TextBox));
-        public static DependencyProperty TitleOpacityProperty =
+        public static readonly DependencyProperty TitleOpacityProperty =
             DependencyProperty.Register("TitleOpacity", typeof(double), typeof(TextBox));
-        public static DependencyProperty PlaceholderProperty =
+        public static readonly DependencyProperty PlaceholderProperty =
             DependencyProperty.Register("Placeholder", typeof(string), typeof(TextBox));
-        public static DependencyProperty PlaceholderFontSizeProperty =
+        public static readonly DependencyProperty PlaceholderFontSizeProperty =
             DependencyProperty.Register("PlaceholderFontSize", typeof(double), typeof(TextBox));
-        public static DependencyProperty PlaceholderFontWeightProperty =
+        public static readonly DependencyProperty PlaceholderFontWeightProperty =
             DependencyProperty.Register("PlaceholderFontWeight", typeof(FontWeight), typeof(TextBox));
-        public static DependencyProperty PlaceholderFontStyleProperty =
+        public static readonly DependencyProperty PlaceholderFontStyleProperty =
             DependencyProperty.Register("PlaceholderFontStyle", typeof(FontStyle), typeof(TextBox));
-        public static DependencyProperty PlaceholderFontFamilyProperty =
+        public static readonly DependencyProperty PlaceholderFontFamilyProperty =
             DependencyProperty.Register("PlaceholderFontFamily", typeof(FontFamily), typeof(TextBox));
-        public static DependencyProperty PlaceholderFontStretchProperty =
+        public static readonly DependencyProperty PlaceholderFontStretchProperty =
             DependencyProperty.Register("PlaceholderFontStretch", typeof(FontStretch), typeof(TextBox));
-        public static DependencyProperty PlaceholderForegroundProperty =
+        public static readonly DependencyProperty PlaceholderForegroundProperty =
             DependencyProperty.Register("PlaceholderForeground", typeof(Brush), typeof(TextBox));
-        public static DependencyProperty PlaceholderOpacityProperty =
+        public static readonly DependencyProperty PlaceholderOpacityProperty =
             DependencyProperty.Register("PlaceholderOpacity", typeof(double), typeof(TextBox));
 
         public CornerRadius CornerRadius
